@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnbloatVPN", "UnbloatVPN\UnbloatVPN\UnbloatVPN.csproj", "{98064537-160E-48E3-A9D8-B10E7CAB2A0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnbloatVPN.Android", "UnbloatVPN\UnbloatVPN.Android\UnbloatVPN.Android.csproj", "{6F553ED9-549C-468B-9E95-35B9A3C13569}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnbloatVPN.Desktop", "UnbloatVPN\UnbloatVPN.Desktop\UnbloatVPN.Desktop.csproj", "{2AB810B3-6AE4-4B45-8D5E-854FC8C35214}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnbloatVPN.Server", "UnbloatVPN.Server", "{0B123E8E-FD7A-47E8-BBFA-0E37E0DE89AB}"
+	ProjectSection(SolutionItems) = preProject
+		UnbloatVPN.Server\main.c = UnbloatVPN.Server\main.c
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98064537-160E-48E3-A9D8-B10E7CAB2A0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98064537-160E-48E3-A9D8-B10E7CAB2A0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98064537-160E-48E3-A9D8-B10E7CAB2A0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98064537-160E-48E3-A9D8-B10E7CAB2A0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F553ED9-549C-468B-9E95-35B9A3C13569}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F553ED9-549C-468B-9E95-35B9A3C13569}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F553ED9-549C-468B-9E95-35B9A3C13569}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6F553ED9-549C-468B-9E95-35B9A3C13569}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F553ED9-549C-468B-9E95-35B9A3C13569}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F553ED9-549C-468B-9E95-35B9A3C13569}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2AB810B3-6AE4-4B45-8D5E-854FC8C35214}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AB810B3-6AE4-4B45-8D5E-854FC8C35214}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AB810B3-6AE4-4B45-8D5E-854FC8C35214}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AB810B3-6AE4-4B45-8D5E-854FC8C35214}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

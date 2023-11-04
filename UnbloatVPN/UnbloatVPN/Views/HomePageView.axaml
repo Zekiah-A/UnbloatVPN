@@ -1,0 +1,99 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:UnbloatVPN.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="360" d:DesignHeight="720"
+             x:Class="UnbloatVPN.Views.HomePageView"
+             x:DataType="viewModels:HomePageViewModel">
+    <Design.DataContext>
+        <viewModels:HomePageViewModel />
+    </Design.DataContext>
+    
+    <UserControl.Styles>
+        <Style Selector="Grid.navigationGrid">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+        </Style>
+        <Style Selector="Grid.navigationGrid > Button">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Styles>
+    <Grid>
+        <StackPanel x:Name="HeaderBackground">
+            <StackPanel.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,400">
+                    <GradientStop Offset="0" Color="Azure" />
+                    <GradientStop Offset="0.8" Color="Azure" />
+                    <GradientStop Offset="1" Color="White" />
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Canvas x:Name="HeaderCanvas" VerticalAlignment="Stretch" Height="360">
+                <Image x:Name="HeaderIcon" Source="../Assets/unbloat-icon-mono.png" Height="48" RenderOptions.BitmapInterpolationMode="HighQuality"></Image>
+                <TextBlock x:Name="HeaderTitle" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextAlignment="Center" FontSize="24" FontWeight="Bold">Unbloat</TextBlock>
+                <Image x:Name="HeaderVpnButton" Source="../Assets/vpn-status-power.png" Height="256" RenderOptions.BitmapInterpolationMode="HighQuality"></Image>
+                <TextBlock x:Name="HeaderDescriptionInfo" TextAlignment="Center" FontSize="24">Good morning</TextBlock>
+                <TextBlock x:Name="HeaderVpnStatus" FontSize="16">VPN is disabled</TextBlock>
+            </Canvas>
+            <StackPanel x:Name="HeaderVpnStatusPanel">
+                <TextBlock FontWeight="Bold" Margin="8">Status</TextBlock>
+                <Grid ColumnDefinitions="* * *">
+                    <Border Grid.Column="0" BoxShadow="0 0 8 0 LightGray" Margin="8" Height="56" CornerRadius="8" Background="White">
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock TextAlignment="Center">Upload</TextBlock>
+                            <TextBlock TextAlignment="Center">11kb/s</TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Column="1" BoxShadow="0 0 8 0 LightGray" Margin="8" Height="56" CornerRadius="8" Background="White">
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock TextAlignment="Center">Download</TextBlock>
+                            <TextBlock TextAlignment="Center">0kb/s</TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Column="2" BoxShadow="0 0 8 0 LightGray" Margin="8" Height="56" CornerRadius="8" Background="White">
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock TextAlignment="Center">Duration</TextBlock>
+                            <TextBlock TextAlignment="Center">0:00:00</TextBlock>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+        
+        <Grid RowDefinitions="Auto *">
+            <Border x:Name="HeaderBorder" Grid.Row="0" Height="48" ZIndex="2">
+                <!--The header canvas will make it appear as if header contents are located within here-->
+            </Border>
+            <ScrollViewer x:Name="ForegroundViewer" Grid.Row="1" ScrollChanged="OnForegroundScrollChanged">
+                <StackPanel>
+                    <Panel x:Name="HeaderExpander" Height="412">
+                        <!--
+                            Will expand the gap above the foreground from 0px (only showing 48px border)
+                            to the 412px (totalling to 460px) needed to show all VPN info when header is expanded.
+                        -->
+                    </Panel>
+                    <Border Background="White">
+                        <Grid RowDefinitions="* Auto">
+                            <StackPanel Grid.Row="0">
+                                <TextBlock FontWeight="Bold" Margin="8">Quick actions</TextBlock>
+                                <Grid Classes="navigationGrid" RowDefinitions="* * * *" ColumnDefinitions="* *" HorizontalAlignment="Stretch" Height="300">
+                                    <Button Grid.Row="0" Grid.Column="0">VPN</Button>
+                                    <Button Grid.Row="0" Grid.Column="1">App store</Button>
+                                    <Button Grid.Row="1" Grid.Column="0">My apps</Button>
+                                    <Button Grid.Row="1" Grid.Column="1">ChatGPT</Button>
+                                    <Button Grid.Row="2" Grid.Column="0">Settings</Button>
+                                    <Button Grid.Row="2" Grid.Column="1">Account</Button>
+                                </Grid>
+                            </StackPanel>
+                            <TextBlock Grid.Row="1" Height="1000">We will figure this out later</TextBlock>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</UserControl>
