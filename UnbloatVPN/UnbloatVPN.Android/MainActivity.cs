@@ -6,7 +6,7 @@ using Avalonia.Android;
 namespace UnbloatVPN.Android;
 
 [Activity(
-    Label = "UnbloatVPN.Android",
+    Label = "Unbloat",
     Theme = "@style/MyTheme.NoActionBar",
     Icon = "@drawable/icon",
     MainLauncher = true,

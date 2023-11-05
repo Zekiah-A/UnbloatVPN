@@ -68,7 +68,8 @@
             <Border x:Name="HeaderBorder" Grid.Row="0" Height="48" ZIndex="2">
                 <!--The header canvas will make it appear as if header contents are located within here-->
             </Border>
-            <ScrollViewer x:Name="ForegroundViewer" Grid.Row="1" ScrollChanged="OnForegroundScrollChanged">
+            <ScrollViewer x:Name="ForegroundViewer" Grid.Row="1" ScrollChanged="OnForegroundScrollChanged"
+                          PointerReleased="OnForegroundTouchReleased" PointerWheelChanged="OnForegroundWheelScroll">
                 <StackPanel>
                     <Panel x:Name="HeaderExpander" Height="412">
                         <!--
